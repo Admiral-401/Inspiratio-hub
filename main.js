@@ -4,6 +4,18 @@ const root = document.getElementById("root");
 const sectOne = document.createElement("div");
 sectOne.setAttribute("class", "inputSection");
 
+//title div inside sextOne div
+const title = document.createElement("div");
+title.setAttribute("class", "title")
+sectOne.appendChild(title);
+
+//content inside sectOne div
+const content = document.createElement("div");
+content.setAttribute("class", "content")
+sectOne.appendChild(content);
+
+
+
 const sectTwo = document.createElement("div");
 sectTwo.setAttribute("class", "itemSection");
 
@@ -25,6 +37,16 @@ Object.entries(attr).forEach(([Key, value]) => {
 })
 
 const inputBtn = document.createElement("button");
+inputBtn.innerHTML=`<i class="fa-solid fa-plus"></i>`
 inputBtn.setAttribute("class", "addBtn")
 
-sectOne.append(input, inputBtn)
+content.append(input, inputBtn)
+
+//Text Node
+const text = document.createElement("p");
+text.textContent="ToDo List_"
+title.appendChild(text)
+
+//Section two data/task mapping area
+const ulist = document.createElement("ul")
+sectTwo.appendChild(ulist)
